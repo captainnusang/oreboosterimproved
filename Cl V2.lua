@@ -87,7 +87,7 @@ local Tp = true
 
 ASection:NewToggle("Auto OrbTP", "Teleports you to orbs automatically (portal relic)", function(State)
     Tp = State
-task.spawn(function()
+spawn(function()
     while Tp and wait() do
 	local MyFol
         local CombatFolder = workspace:FindFirstChild("CombatFolder")
@@ -100,7 +100,8 @@ task.spawn(function()
             pcall(function()
             for i,v in pairs(MyFol) do
                 if v:IsA("BasePart") then
-                v.CFrame = HRP.CFrame
+                v.CFrame = HRP.CFrame + Vector3.new(0, 0.1, 0)
+		HRP.CFrame = v.CFrame + Vector3.new(0, 0.1, 0)
                 end
         end
             end)
