@@ -87,7 +87,7 @@ local Tp = true
 
 ASection:NewToggle("Auto OrbTP", "Teleports you to orbs automatically (portal relic)", function(State)
     Tp = State
-task.spawn(function()
+spawn(function()
     while Tp and wait() do
 	local MyFol
         local CombatFolder = workspace:FindFirstChild("CombatFolder")
