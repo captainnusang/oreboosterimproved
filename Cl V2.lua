@@ -100,8 +100,7 @@ task.spawn(function()
             pcall(function()
             for i,v in pairs(MyFol) do
                 if v:IsA("BasePart") then
-		v.CFrame = HRP.CFrame + Vector3.new(0, 0.1, 0)
-                HRP.CFrame = v.CFrame + Vector3.new(0, 0.1, 0)
+                HRP.CFrame = v.CFrame + Vector3.new(0, 5, 0)
                 end
         end
             end)
